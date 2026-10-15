@@ -2431,7 +2431,7 @@ html,body{background:#eee9ec;}body{min-height:100dvh;padding:24px;}.phone{height
       <div class="page-body with-tab"><div class="account-scroll">
         <div class="mine-profile-card"><button class="account-avatar" id="mineAvatarBtn" type="button" aria-label="修改头像和个人资料"><span id="mineAvatar" class="account-avatar"></span></button><div class="mine-profile-copy"><h1 class="mine-nickname" id="mineNickname">nn</h1><p class="mine-identity" id="mineIdentity"></p></div><button class="mine-profile-edit" id="mineProfileBtn" type="button" aria-label="编辑个人资料"><span data-icon="edit"></span></button></div>
         <button class="btn primary mine-login" id="mineLoginBtn" type="button">登录/注册</button>
-        <div class="mine-stats"><span>我的灵感</span><strong id="mineCardCount">0</strong></div>
+        <button class="mine-stats web-trash-entry" id="mineInspirationsBtn" type="button" aria-label="查看我的灵感，前往灵感池"><span>我的灵感</span><strong id="mineCardCount">0</strong></button>
         <button class="mine-logout" id="mineLogoutBtn" type="button" hidden>退出登录</button>
       </div></div>
       <nav class="tabbar" aria-label="底部导航">
@@ -2660,6 +2660,7 @@ html,body{background:#eee9ec;}body{min-height:100dvh;padding:24px;}.phone{height
       showToast("已进入演示账号");
     }
     function wireAccountEvents() {
+      $("#mineInspirationsBtn").addEventListener("click",()=>showPage("home"));
       $("#mineLoginBtn").addEventListener("click",()=>{loginReturnPage="mine";showPage("login");});
       $("#mineProfileBtn").addEventListener("click",startProfileEdit);
       $("#mineAvatarBtn").addEventListener("click",startProfileEdit);
