@@ -2078,9 +2078,9 @@
   /* Keep NailBox's original composition and motion; adapt only the web frame. */
 html,body{background:#eee9ec;}body{min-height:100vh;min-height:100dvh;padding:24px;}.phone{height:min(900px,calc(100vh - 48px));height:min(900px,calc(100dvh - 48px));width:390px;border:8px solid #fff;border-radius:40px;box-shadow:0 25px 50px -12px rgba(0,0,0,.38);}.card-tags{display:none;}.demo-controls{margin:24px 16px;display:grid;gap:12px;}.demo-controls button{background:#fff;color:#785b6d;border-radius:18px;padding:17px;text-align:left;font:inherit;}.demo-controls p,.demo-result-note{font-size:12px;color:#a18c99;line-height:1.7;}.demo-outfits{margin:12px 0 0;}.demo-outfits>span{font-size:12px;color:#a18c99;}.demo-outfits>div{display:flex;justify-content:center;gap:12px;margin-top:8px;}.demo-outfits button{background:white;border-radius:16px;overflow:hidden;width:88px;padding:0;color:#6f5868;}.demo-outfits img{display:block;width:88px;height:88px;object-fit:cover;}.demo-outfits b{display:block;font-size:12px;padding:6px;font-weight:500;}.today-photo-stage{min-height:0;}.onboarding-step{width:max-content;max-width:100%;}.onboarding-preview img{object-fit:cover;}button:focus-visible{outline:2px solid #d95b75;outline-offset:3px;}.sheet-overlay{z-index:100;}
 @media(max-width:600px){
-html,body{height:100%;overflow:hidden;background:var(--bg-page);}
+html,body{height:100%;overflow:hidden;background:#eee9ec;}
 body{position:relative;display:block;min-height:0;padding:0;}
-.phone{position:absolute;left:50%;top:0;width:390px;height:844px;border:0;border-radius:0;box-shadow:none;transform-origin:top center;transform:translateX(-50%) scale(var(--demo-fit,1));}
+.phone{position:absolute;left:50%;top:8px;width:406px;height:860px;border:8px solid #fff;border-radius:40px;box-shadow:0 16px 36px -12px rgba(0,0,0,.32);transform-origin:top center;transform:translateX(-50%) scale(var(--demo-fit,1));}
 /* Keep Safari from zooming the entire page when editing small text fields. */
 .phone input,.phone textarea,.web-search-tokens input{font-size:16px;}
 }
@@ -4514,7 +4514,7 @@ function installWebTrash(){const entry=document.createElement('button');entry.ty
     function fitMobileDemo(){
       if(!matchMedia('(max-width:600px)').matches){document.documentElement.style.removeProperty('--demo-fit');return;}
       const width=document.documentElement.clientWidth,height=window.innerHeight;
-      const scale=Math.min(width/390,height/844);
+      const scale=Math.min((width-16)/406,(height-16)/860);
       document.documentElement.style.setProperty('--demo-fit',String(scale));
     }
     fitMobileDemo();
