@@ -76,6 +76,9 @@
       container: phone / size;
     }
 
+    /* Clip animated/filter layers inside the screen independently of the outer shadow. */
+    .device-screen {position:absolute;inset:0;overflow:hidden;border-radius:32px;clip-path:inset(0 round 32px);isolation:isolate;}
+
     .status-bar {
       height: 44px;
       position: relative;
@@ -2106,6 +2109,7 @@ body{position:relative;display:block;min-height:0;padding:0;}
 </head>
 <body>
   <main class="phone" id="app" aria-label="NailBox 美甲灵感体验">
+    <div class="device-screen">
     <section class="page onboarding-page" id="page-onboarding" data-page="onboarding">
       <div class="status-bar"><div class="time">9:41</div><div class="status-icons" aria-hidden="true"><svg width="18" height="12" viewBox="0 0 18 12"><rect x="1" y="7" width="3" height="4" rx="1" fill="currentColor"/><rect x="6" y="5" width="3" height="6" rx="1" fill="currentColor"/><rect x="11" y="2" width="3" height="9" rx="1" fill="currentColor"/></svg><svg width="15" height="12" viewBox="0 0 15 12" fill="none"><path d="M2 4.5C5.5 1.6 9.5 1.6 13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4.5 7C6.5 5.4 8.5 5.4 10.5 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="9.5" r="1" fill="currentColor"/></svg><svg width="23" height="11" viewBox="0 0 23 11" fill="none"><rect x=".5" y=".5" width="20" height="10" rx="2" stroke="currentColor"/><rect x="2.5" y="2.5" width="16" height="6" rx="1" fill="currentColor"/><path d="M22 4v3" stroke="currentColor" stroke-linecap="round"/></svg></div></div>
       <div class="onboarding-splash" aria-hidden="true">
@@ -2496,6 +2500,7 @@ body{position:relative;display:block;min-height:0;padding:0;}
       </div>
     </div>
     <div class="hidden-state" id="prototypeState" data-state="prototype"></div>
+    </div>
   </main>
 
   <script>
